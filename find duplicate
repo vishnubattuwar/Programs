@@ -1,0 +1,23 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+head = Node(10)
+head.next = Node(20)
+head.next.next = Node(30)
+def show(head):
+    current = head
+    while current:
+        print(current.value, end=",")
+        current = current.next
+show(head)
+def find_dup(head):
+    t = set()
+    h = head
+    while h:
+        if t.add(h.data == None):
+            print(h.data,"is duplicate");
+            return
+    h = h.next
+    print("No duplicate")
+find_dup(head)
